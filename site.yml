@@ -1,0 +1,5 @@
+---
+- name: "Install and configure Elasticsearch"
+  hosts: elasticsearch-master
+  roles:
+  - { role: pllr.elasticsearch }

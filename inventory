@@ -1,0 +1,10 @@
+[elasticsearch_master]
+c7els01.pr.ch
+c7els02.pr.ch
+c7els03.pr.ch
+
+[logstash]
+c7lgs01.pr.ch
+
+[kibana]
+c7kbn01.pr.ch

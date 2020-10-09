@@ -1,0 +1,8 @@
+- src: https://github.com/PhilRanzato/pllr.elasticsearch
+  version: develop
+# - src: https://github.com/PhilRanzato/pllr.logstash
+#   version: develop
+# - src: https://github.com/PhilRanzato/pllr.kibana
+#   version: develop
+# - src: https://github.com/PhilRanzato/pllr.nginx
+#   version: develop
