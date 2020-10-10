@@ -1,5 +1,20 @@
 ---
-- name: "Install and configure Elasticsearch"
+- name: "Install Elasticsearch"
   hosts: elasticsearch_master
   roles:
-  - { role: pllr.elasticsearch }
+  - { role: pllr.elasticsearch-install }
+
+- name: "Install Logstash"
+  hosts: logstash
+  roles:
+  - { role: pllr.logstash-install }
+
+- name: "Install Kibana"
+  hosts: kibana
+  roles:
+  - { role: pllr.kibana-install }
+
+- name: "Generate internal CA"
+  hosts: elasticsearch_primary_master
+  roles:
+  - { role: pllr.certificate-openssl }

@@ -1,8 +1,8 @@
-- src: https://github.com/PhilRanzato/pllr.elasticsearch
+- src: https://github.com/PhilRanzato/pllr.certificate-openssl
   version: develop
-# - src: https://github.com/PhilRanzato/pllr.logstash
-#   version: develop
-# - src: https://github.com/PhilRanzato/pllr.kibana
-#   version: develop
-# - src: https://github.com/PhilRanzato/pllr.nginx
-#   version: develop
+- src: https://github.com/PhilRanzato/pllr.elasticsearch-install
+  version: develop
+- src: https://github.com/PhilRanzato/pllr.logstash-install
+  version: develop
+- src: https://github.com/PhilRanzato/pllr.kibana-install
+  version: develop
