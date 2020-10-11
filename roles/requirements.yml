@@ -2,6 +2,7 @@
   version: develop
 - src: https://github.com/PhilRanzato/pllr.elasticsearch-install
   version: develop
+  name: pllr.elasticsearch-install
 - src: https://github.com/PhilRanzato/pllr.logstash-install
   version: develop
 - src: https://github.com/PhilRanzato/pllr.kibana-install
