@@ -1,12 +1,4 @@
 ---
-- name: "Generate internal CA"
-  hosts: elasticsearch_primary_master
-  become: true
-  roles:
-  - { role: pllr.certificate-openssl }
-  vars_files:
-  - vars/ca.yml
-
 - name: "Install Elasticsearch"
   hosts: elasticsearch_master
   become: true

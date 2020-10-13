@@ -1,0 +1,20 @@
+---
+ca:
+  dir: /opt/private/ssl
+  cert:
+    file: "elastic-CA.crt"
+  key:
+    file: "elastic-CA.key"
+    pass: "El4stic!"
+
+certificates:
+  elasticsearch:
+    generate: false
+    pass: "Es-P4ssw0rd!"
+  logstash:
+    generate: true
+    pass: "Lgs-P4ssw0rd!"
+
+xpack:
+  security:
+    enabled: true

@@ -1,0 +1,19 @@
+---
+directory: /opt/private/ssl
+cert_name: "elastic"
+key_passphrase: "El4stic!"
+size: "4096"
+type: "RSA"
+backup: yes
+country: "ES"
+organization: "elk"
+email: "elastic.kibana@logstash.elk"
+common_name: "ElkStack"
+# Values must be prefixed by their options. (i.e., email, URI, DNS, RID, IP, dirName, otherName and the ones specific to your CA)
+sans: "DNS:*.elk.es"
+# always set true or false
+basic_constraints:
+- "CA:TRUE"
+key_usage:
+- digitalSignature
+- keyAgreement

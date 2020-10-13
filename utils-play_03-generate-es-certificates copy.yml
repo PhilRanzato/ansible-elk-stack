@@ -1,0 +1,15 @@
+---
+- name: "Gather facts from all hosts"
+  hosts: elasticsearch_masters:logstash:kibana
+  tasks:
+  - name: "Print IP"
+    debug:
+      msg: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+
+- name: "Generate Elasticsearch Certificates"
+  hosts: elasticsearch_primary_master
+  become: true
+  roles:
+  - { role: pllr.elasticsearch-certificate }
+  vars_files:
+  - vars/03-certificates-elasticsearch.yml

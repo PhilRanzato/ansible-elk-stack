@@ -1,9 +1,15 @@
 - src: https://github.com/PhilRanzato/pllr.certificate-openssl
-  version: develop
+  version: v1.0.0
+  name: pllr.certificate-openssl
 - src: https://github.com/PhilRanzato/pllr.elasticsearch-install
   version: develop
   name: pllr.elasticsearch-install
 - src: https://github.com/PhilRanzato/pllr.logstash-install
   version: develop
+  name: pllr.pllr.logstash-install
 - src: https://github.com/PhilRanzato/pllr.kibana-install
+  version: v1.0.0
+  name: pllr.kibana-install
+- src: https://github.com/PhilRanzato/pllr.elasticsearch-certificate
   version: develop
+  name: pllr.elasticsearch-certificate
