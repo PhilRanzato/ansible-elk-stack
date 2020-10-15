@@ -6,7 +6,7 @@
     debug:
       msg: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
 
-- name: "Generate Elasticsearch Certificates"
+- name: "Generate Logstash Certificates"
   hosts: elasticsearch_primary_master
   become: true
   roles:

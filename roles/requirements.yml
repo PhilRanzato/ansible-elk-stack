@@ -13,3 +13,6 @@
 - src: https://github.com/PhilRanzato/pllr.elasticsearch-certificate
   version: develop
   name: pllr.elasticsearch-certificate
+- src: https://github.com/PhilRanzato/pllr.elk-utils
+  version: v1.0.0
+  name: pllr.elk-utils

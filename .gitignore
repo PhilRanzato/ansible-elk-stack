@@ -1,1 +1,5 @@
 role/*
+files/*.crt
+files/*.key
+files/*/*.p12
+files/*-certificates.zip
