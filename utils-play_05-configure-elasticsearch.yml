@@ -1,0 +1,14 @@
+---
+- name: "Gather facts from all hosts"
+  hosts: elasticsearch_masters
+  tasks:
+  - name: "Print IP"
+    debug:
+      msg: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+
+- name: "Configure Elasticsearch"
+  hosts: elasticsearch_masters
+  roles:
+  - { role: plrr.elasticsearch-configuration }
+  vars_files:
+  - vars/05-es-config.yml

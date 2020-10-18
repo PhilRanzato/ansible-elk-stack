@@ -1,18 +1,21 @@
-- src: https://github.com/PhilRanzato/pllr.certificate-openssl
+- src: https://github.com/PhilRanzato/plrr.certificate-openssl
   version: v1.0.0
-  name: pllr.certificate-openssl
-- src: https://github.com/PhilRanzato/pllr.elasticsearch-install
+  name: plrr.certificate-openssl
+- src: https://github.com/PhilRanzato/plrr.elasticsearch-install
   version: develop
-  name: pllr.elasticsearch-install
-- src: https://github.com/PhilRanzato/pllr.logstash-install
+  name: plrr.elasticsearch-install
+- src: https://github.com/PhilRanzato/plrr.logstash-install
   version: develop
-  name: pllr.pllr.logstash-install
-- src: https://github.com/PhilRanzato/pllr.kibana-install
+  name: plrr.logstash-install
+- src: https://github.com/PhilRanzato/plrr.kibana-install
   version: v1.0.0
-  name: pllr.kibana-install
-- src: https://github.com/PhilRanzato/pllr.elasticsearch-certificate
-  version: develop
-  name: pllr.elasticsearch-certificate
-- src: https://github.com/PhilRanzato/pllr.elk-utils
+  name: plrr.kibana-install
+- src: https://github.com/PhilRanzato/plrr.elasticsearch-certificate
   version: v1.0.0
-  name: pllr.elk-utils
+  name: plrr.elasticsearch-certificate
+- src: https://github.com/PhilRanzato/plrr.elk-utils
+  version: v1.0.0
+  name: plrr.elk-utils
+- src: https://github.com/PhilRanzato/plrr.elasticsearch-configuration
+  version: develop
+  name: plrr.elasticsearch-configuration

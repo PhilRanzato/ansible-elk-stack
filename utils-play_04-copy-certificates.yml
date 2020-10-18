@@ -2,14 +2,14 @@
 - name: "Fetch certificates"
   hosts: elasticsearch_primary_master
   roles:
-  - { role: pllr.elk-utils }
+  - { role: plrr.elk-utils }
   vars_files:
   - vars/04-fetch.yml
 
 - name: "Copy certificates and keys to all hosts"
   hosts: all:!localhost
   roles:
-  - { role: pllr.elk-utils }
+  - { role: plrr.elk-utils }
   vars_files:
   - vars/04-copy.yml
   serial: 1

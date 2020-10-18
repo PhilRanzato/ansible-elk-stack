@@ -3,6 +3,6 @@
   hosts: elasticsearch_primary_master
   become: true
   roles:
-  - { role: pllr.certificate-openssl }
+  - { role: plrr.certificate-openssl }
   vars_files:
   - vars/ca.yml

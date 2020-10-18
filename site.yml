@@ -3,33 +3,33 @@
   hosts: elasticsearch_primary_master
   become: true
   roles:
-  - { role: pllr.certificate-openssl }
+  - { role: plrr.certificate-openssl }
   vars_files:
-  - vars/ca.yml
+  - vars/01-ca.yml
 
 - name: "Install Elasticsearch"
   hosts: elasticsearch_masters
   become: true
   roles:
-  - { role: pllr.elasticsearch-install }
+  - { role: plrr.elasticsearch-install }
 
 - name: "Install Logstash"
   hosts: logstash
   become: true
   roles:
-  - { role: pllr.logstash-install }
+  - { role: plrr.logstash-install }
 
 - name: "Install Kibana"
   hosts: kibana
   become: true
   roles:
-  - { role: pllr.kibana-install }
+  - { role: plrr.kibana-install }
 
 - name: "Generate Elasticsearch Certificates"
   hosts: elasticsearch_primary_master
   become: true
   roles:
-  - { role: pllr.elasticsearch-certificate }
+  - { role: plrr.elasticsearch-certificate }
   vars_files:
   - vars/03-certificates-elasticsearch.yml
 
@@ -37,21 +37,28 @@
   hosts: elasticsearch_primary_master
   become: true
   roles:
-  - { role: pllr.elasticsearch-certificate }
+  - { role: plrr.elasticsearch-certificate }
   vars_files:
   - vars/03-certificates-logstash.yml
 
 - name: "Fetch certificates"
   hosts: elasticsearch_primary_master
   roles:
-  - { role: pllr.elk-utils }
+  - { role: plrr.elk-utils }
   vars_files:
   - vars/04-fetch.yml
 
 - name: "Copy certificates and keys to all hosts"
   hosts: all:!localhost
   roles:
-  - { role: pllr.elk-utils }
+  - { role: plrr.elk-utils }
   vars_files:
   - vars/04-copy.yml
   serial: 1
+
+- name: "Configure Elasticsearch"
+  hosts: elasticsearch_masters
+  roles:
+  - { role: plrr.elasticsearch-configuration }
+  vars_files:
+  - vars/05-es-config.yml

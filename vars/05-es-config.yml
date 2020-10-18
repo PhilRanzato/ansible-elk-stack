@@ -1,0 +1,70 @@
+---
+## Custom variables
+node_name: "{{ inventory_hostname | regex_replace('\\..+', '') }}"
+setup_passwords: false
+
+elasticsearch_masters_group_name: elasticsearch_masters
+elasticsearch_primary_master_group_name: elasticsearch_primary_master
+
+external_disk: false
+
+elasticsearch:
+  dir:
+    data: /var/lib/elasticsearch
+    logs: /var/log/elasticsearch
+  certificates: 
+    dir: /etc/elasticsearch
+    http_certificate:
+      name: "{{ node_name }}.p12"
+      password: "Es-P4ssw0rd!"
+    transport_certificate:
+      name: "{{ node_name }}.p12"
+      password: "Es-P4ssw0rd!"
+
+## /etc/elasticsearch/elasticsearch.yml
+cluster:
+  name: "plrr-elk"
+
+multiple_zones: false
+
+# In group vars
+# node:
+#   name: "{{ node_name }}"
+#   data: true
+#   master: true
+
+path:
+  data: "{{ elasticsearch.dir.data }}"
+  logs: "{{ elasticsearch.dir.logs }}"
+
+bootstrap:
+  memory_lock: true
+
+network:
+  host: "_eth0_,_local_"
+
+http:
+  port: "9200"
+
+xpack:
+  security:
+    enabled: true
+    http:
+      ssl:
+        enabled: true
+        verification_mode: full
+        keystore:
+          path:  "{{ elasticsearch.certificates.dir }}/{{ elasticsearch.certificates.http_certificate.name }}"
+        truststore:
+          path: "{{ elasticsearch.certificates.dir }}/{{ elasticsearch.certificates.http_certificate.name }}"
+    transport:
+      ssl:
+        enabled: true
+        verification_mode: full
+        keystore:
+          path: "{{ elasticsearch.certificates.dir }}/{{ elasticsearch.certificates.transport_certificate.name }}"
+        truststore:
+          path: "{{ elasticsearch.certificates.dir }}/{{ elasticsearch.certificates.transport_certificate.name }}"
+  monitoring:
+    collection:
+      enabled: true

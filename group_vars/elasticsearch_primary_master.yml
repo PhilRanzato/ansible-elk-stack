@@ -1,5 +1,5 @@
 ---
 node:
   name: "{{ node_name }}"
-  data: true
+  data: false
   master: true
