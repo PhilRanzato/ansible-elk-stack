@@ -7,7 +7,7 @@ gcloud compute addresses create elastic01-internal --region europe-north1 --subn
 #### Create External IP
 
 gcloud compute addresses create elastic01-external --project=learning-288910 --network-tier=PREMIUM --region=europe-north1
-export EXT_ADDRESS=$(gcloud compute addresses describe elastic01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
+export EXT_ADDRESS_ES01=$(gcloud compute addresses describe elastic01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
 
 #### Create Host VM
 
@@ -16,7 +16,7 @@ gcloud beta compute --project=learning-288910 instances create elastic01 \
     --machine-type=e2-medium \
     --subnet=zone-1 \
     --private-network-ip=10.100.0.10 \
-    --address=$EXT_ADDRESS \
+    --address=$EXT_ADDRESS_ES01 \
     --maintenance-policy=MIGRATE \
     --service-account=237354390854-compute@developer.gserviceaccount.com \
     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
@@ -40,7 +40,7 @@ gcloud compute addresses create elastic02-internal --region europe-north1 --subn
 #### Create External IP
 
 gcloud compute addresses create elastic02-external --project=learning-288910 --network-tier=PREMIUM --region=europe-north1
-export EXT_ADDRESS=$(gcloud compute addresses describe elastic02-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
+export EXT_ADDRESS_ES02=$(gcloud compute addresses describe elastic02-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
 
 #### Create Host
 
@@ -49,7 +49,7 @@ gcloud beta compute --project=learning-288910 instances create elastic02 \
     --machine-type=e2-medium \
     --subnet=zone-2 \
     --private-network-ip=10.101.0.10 \
-    --address=$EXT_ADDRESS \
+    --address=$EXT_ADDRESS_ES02 \
     --maintenance-policy=MIGRATE \
     --service-account=237354390854-compute@developer.gserviceaccount.com \
     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
@@ -74,7 +74,7 @@ gcloud compute addresses create elastic03-internal --region europe-north1 --subn
 #### Create External IP
 
 gcloud compute addresses create elastic03-external --project=learning-288910 --network-tier=PREMIUM --region=europe-north1
-export EXT_ADDRESS=$(gcloud compute addresses describe elastic03-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
+export EXT_ADDRESS_ES03=$(gcloud compute addresses describe elastic03-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
 
 #### Create Host
 
@@ -83,7 +83,7 @@ gcloud beta compute --project=learning-288910 instances create elastic03 \
     --machine-type=e2-medium \
     --subnet=zone-3 \
     --private-network-ip=10.102.0.10 \
-    --address=$EXT_ADDRESS \
+    --address=$EXT_ADDRESS_ES03 \
     --maintenance-policy=MIGRATE \
     --service-account=237354390854-compute@developer.gserviceaccount.com \
     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
@@ -108,7 +108,7 @@ gcloud compute addresses create logstash01-internal --region europe-north1 --sub
 #### Create External IP
 
 gcloud compute addresses create logstash01-external --project=learning-288910 --network-tier=PREMIUM --region=europe-north1
-export EXT_ADDRESS=$(gcloud compute addresses describe logstash01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
+export EXT_ADDRESS_LGS01=$(gcloud compute addresses describe logstash01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
 
 #### Create Host
 
@@ -117,7 +117,7 @@ gcloud beta compute --project=learning-288910 instances create logstash01 \
     --machine-type=e2-medium \
     --subnet=zone-2 \
     --private-network-ip=10.101.0.20 \
-    --address=$EXT_ADDRESS \
+    --address=$EXT_ADDRESS_LGS01 \
     --maintenance-policy=MIGRATE \
     --service-account=237354390854-compute@developer.gserviceaccount.com \
     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
@@ -141,7 +141,7 @@ gcloud compute addresses create kibana01-internal --region europe-north1 --subne
 #### Create External IP
 
 gcloud compute addresses create kibana01-external --project=learning-288910 --network-tier=PREMIUM --region=europe-north1
-export EXT_ADDRESS=$(gcloud compute addresses describe kibana01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
+export EXT_ADDRESS_KBN01=$(gcloud compute addresses describe kibana01-external --region europe-north1 --format json | jq '[.address][0]' --raw-output)
 
 #### Create Host
 
@@ -150,7 +150,7 @@ gcloud beta compute --project=learning-288910 instances create kibana01 \
     --machine-type=e2-medium \
     --subnet=zone-2 \
     --private-network-ip=10.101.0.30 \
-    --address=$EXT_ADDRESS \
+    --address=$EXT_ADDRESS_KBN01 \
     --maintenance-policy=MIGRATE \
     --service-account=237354390854-compute@developer.gserviceaccount.com \
     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
