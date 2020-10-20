@@ -10,32 +10,32 @@ all:
       hosts:
         elastic01:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.100.0.10
     elasticsearch_master:
       hosts:
         elastic01:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.100.0.10
         elastic02:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.101.0.10
         elastic03:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.102.0.10
     logstash:
       hosts:
         logstash01:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.101.0.20
     kibana:
       hosts:
         kibana01:
           ansible_user: philranzato
-          ansible_private_key_file: ~/.ssh/id_rsa_phil
+          ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.101.0.30
         

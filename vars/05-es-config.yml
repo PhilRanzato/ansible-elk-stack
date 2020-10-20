@@ -1,7 +1,7 @@
 ---
 ## Custom variables
 node_name: "{{ inventory_hostname | regex_replace('\\..+', '') }}"
-setup_passwords: false
+setup_passwords: true
 
 elasticsearch_masters_group_name: elasticsearch_masters
 elasticsearch_primary_master_group_name: elasticsearch_primary_master

@@ -1,5 +1,5 @@
 - src: git+git@github.com:PhilRanzato/plrr.certificate-openssl.git
-  version: v1.0.0
+  version: develop
   name: plrr.certificate-openssl
 - src: git+git@github.com:PhilRanzato/plrr.elasticsearch-install.git
   version: develop
@@ -14,7 +14,7 @@
   version: v1.0.0
   name: plrr.elasticsearch-certificate
 - src: git+git@github.com:PhilRanzato/plrr.elk-utils.git
-  version: v1.0.0
+  version: develop
   name: plrr.elk-utils
 - src: git+git@github.com:PhilRanzato/plrr.elasticsearch-configuration.git
   version: develop

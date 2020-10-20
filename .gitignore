@@ -4,3 +4,4 @@ files/*.key
 files/*.json
 files/*/*.p12
 files/*-certificates.zip
+gcp-scripts/test*
