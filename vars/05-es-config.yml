@@ -25,13 +25,16 @@ elasticsearch:
 cluster:
   name: "plrr-elk"
 
-multiple_zones: false
+multiple_zones: true
 
 # In group vars
 # node:
 #   name: "{{ node_name }}"
 #   data: true
 #   master: true
+#   # This attribute is defined in the inventory
+#   attr:
+#     zone: "{{ node_attr_zone }}"
 
 path:
   data: "{{ elasticsearch.dir.data }}"

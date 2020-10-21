@@ -12,20 +12,24 @@ all:
           ansible_user: philranzato
           ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.100.0.10
+          node_attr_zone: europe-north1-a
     elasticsearch_master:
       hosts:
         elastic01:
           ansible_user: philranzato
           ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.100.0.10
+          node_attr_zone: europe-north1-a
         elastic02:
           ansible_user: philranzato
           ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.101.0.10
+          node_attr_zone: europe-north1-b
         elastic03:
           ansible_user: philranzato
           ansible_private_key_file: ~/.ssh/id_rsa
           ansible_host: 10.102.0.10
+          node_attr_zone: europe-north1-c
     logstash:
       hosts:
         logstash01:

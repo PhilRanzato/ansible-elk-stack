@@ -3,3 +3,5 @@ node:
   name: "{{ node_name }}"
   data: false
   master: true
+  attr:
+    zone: "{{ node_attr_zone }}"
