@@ -2,10 +2,10 @@
   version: develop
   name: plrr.certificate-openssl
 - src: git+git@github.com:PhilRanzato/plrr.elasticsearch-install.git
-  version: develop
+  version: v1.0.0
   name: plrr.elasticsearch-install
 - src: git+git@github.com:PhilRanzato/plrr.logstash-install.git
-  version: develop
+  version: v1.0.0
   name: plrr.logstash-install
 - src: git+git@github.com:PhilRanzato/plrr.kibana-install.git
   version: v1.0.0
@@ -17,5 +17,11 @@
   version: develop
   name: plrr.elk-utils
 - src: git+git@github.com:PhilRanzato/plrr.elasticsearch-configuration.git
-  version: develop
+  version: v1.0.0
   name: plrr.elasticsearch-configuration
+- src: git+git@github.com:PhilRanzato/plrr.logstash-configuration.git
+  version: develop
+  name: plrr.logstash-configuration
+- src: git+git@github.com:PhilRanzato/plrr.java-certificates.git
+  version: develop
+  name: plrr.java-certificates

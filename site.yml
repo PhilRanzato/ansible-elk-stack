@@ -15,7 +15,6 @@
 
 - name: "Install Logstash"
   hosts: logstash
-  become: true
   roles:
   - { role: plrr.logstash-install }
 
