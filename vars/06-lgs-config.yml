@@ -12,16 +12,23 @@ ca:
   cert: "elastic-CA.crt"
   key: "elastic-CA.key"
 
+logstash_user: logstash_system
+logstash_password: ""
+
 logstash:
   conf_dir: "/etc/logstash"
   data_dir: "/var/lib/logstash"
   logs_dir: "/var/log/logstash"
   truststore:
     path: "/etc/logstash/{{ node.name }}.p12"
-    password: "test"
+    password: "Lgs-P4ssw0rd!"
   keystore:
     path: "/etc/logstash/{{ node.name }}.p12"
-    password: "test"
+    password: "Lgs-P4ssw0rd!"
+  user: "{{ logstash_user }}"
+  password: "{{ logstash_password }}"
+
+elasticsearch_http_port: "9200"
 
 # /etc/logstash/logstash.yml
 node:
@@ -38,15 +45,15 @@ xpack:
   monitoring:
       enabled: true
       elasticsearch:
-        username: logstash_system
-        password: test
+        username: "{{ logstash.user }}"
+        password: "{{ logstash.password }}"
         sniffing: false
         ssl:
           certificate_authority: "{{ ca.dir }}/{{ ca.cert }}"
           truststore:
             path: "{{ logstash.truststore.path }}"
             password: "{{ logstash.truststore.password }}"
-          kystore:
+          keystore:
             path: "{{ logstash.keystore.path }}"
             password: "{{ logstash.keystore.password }}"
           verification_mode: certificate
