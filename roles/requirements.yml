@@ -25,3 +25,6 @@
 - src: git+git@github.com:PhilRanzato/plrr.java-certificates.git
   version: develop
   name: plrr.java-certificates
+- src: git+git@github.com:PhilRanzato/plrr.kibana-configuration.git
+  version: develop
+  name: plrr.kibana-configuration

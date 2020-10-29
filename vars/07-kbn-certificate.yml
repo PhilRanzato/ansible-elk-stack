@@ -1,0 +1,53 @@
+---
+generate: 
+  ca: false
+  certificate: true
+
+ca:
+  directory: /opt/private/ssl
+  cert_name: "elastic-CA"
+  # cert_format: "crt | pem"
+  cert_format: "crt"
+  key_passphrase: "El4stic!"
+  validity: "+80000d"
+  size: "4096"
+  type: "RSA"
+  backup: yes
+  country: "ES"
+  organization: "elk"
+  email: "elastic.kibana@logstash.elk"
+  common_name: "ElkStack"
+  # Values must be prefixed by their options. (i.e., email, URI, DNS, RID, IP, dirName, otherName and the ones specific to your CA)
+  sans: "DNS:*.elk.es"
+  basic_constraints:
+  - "CA:TRUE"
+  key_usage:
+  - digitalSignature
+  - keyAgreement
+  owner: "root"
+  group: "root"
+
+certificate:
+  from_ca:
+    cert: /etc/kibana/elastic-CA.crt
+    key: /etc/kibana/elastic-CA.key
+    pass: "El4stic!"
+  directory: /etc/kibana
+  cert_name: "kibana"
+  # cert_format: "crt | pem"
+  cert_format: "crt"
+  key_passphrase: "K1bana!"
+  validity: "+3650d"
+  size: "4096"
+  type: "RSA"
+  backup: yes
+  country: "ES"
+  organization: "elk"
+  email: "elastic.kibana@logstash.elk"
+  common_name: "ElkStack"
+  # Values must be prefixed by their options. (i.e., email, URI, DNS, RID, IP, dirName, otherName and the ones specific to your CA)
+  sans: 
+  - "DNS:*.elk.es"
+  - "IP:35.228.156.50"
+  owner: "kibana"
+  group: "kibana"

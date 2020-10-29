@@ -1,7 +1,6 @@
 ---
 - name: "Generate Elasticsearch Certificates and instances"
   hosts: elasticsearch_primary_master
-  become: true
   roles:
   - { role: plrr.certificate-openssl }
   vars_files:

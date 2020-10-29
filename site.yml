@@ -61,3 +61,10 @@
   - { role: plrr.elasticsearch-configuration }
   vars_files:
   - vars/05-es-config.yml
+
+- name: "Configure Logstash"
+  hosts: logstash
+  roles:
+  - { role: plrr.logstash-configuration }
+  vars_files:
+  - vars/06-lgs-config.yml

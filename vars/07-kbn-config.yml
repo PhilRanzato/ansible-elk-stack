@@ -1,0 +1,23 @@
+---
+server:
+  port: 5601
+  host: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+  name: "{{ inventory_hostname_short }}"
+  ssl:
+    enabled: true
+    certificate: "/etc/kibana/kibana.crt"
+    key: "/etc/kibana/kibana.key"
+    key_passphrase: "K1bana!"
+
+elasticsearch_hosts_group_name: "elasticsearch_master"
+kibana_user: "kibana_system"
+kibana_password: ""
+elasticsearch_ssl_certificate_authorities:
+- "/etc/kibana/elastic-CA.crt"
+
+elasticsearch:
+  username: "{{ kibana_user }}"
+  password: "{{ kibana_password }}"
+  ssl:
+    certificateAuthorities: "{{ elasticsearch_ssl_certificate_authorities }}"
+  http_port: 9200
