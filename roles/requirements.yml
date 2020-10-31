@@ -1,30 +1,33 @@
-- src: git+git@github.com:PhilRanzato/plrr.certificate-openssl.git
+- src: git+git@github.com:PhilRanzato/philranzato.certificate-openssl.git
   version: v2.0.0
-  name: plrr.certificate-openssl
-- src: git+git@github.com:PhilRanzato/plrr.elasticsearch-install.git
+  name: philranzato.certificate-openssl
+- src: git+git@github.com:PhilRanzato/philranzato.elasticsearch-install.git
   version: v1.0.0
-  name: plrr.elasticsearch-install
-- src: git+git@github.com:PhilRanzato/plrr.logstash-install.git
+  name: philranzato.elasticsearch-install
+- src: git+git@github.com:PhilRanzato/philranzato.logstash-install.git
   version: v1.0.0
-  name: plrr.logstash-install
-- src: git+git@github.com:PhilRanzato/plrr.kibana-install.git
+  name: philranzato.logstash-install
+- src: git+git@github.com:PhilRanzato/philranzato.kibana-install.git
   version: v1.0.0
-  name: plrr.kibana-install
-- src: git+git@github.com:PhilRanzato/plrr.elasticsearch-certificate.git
+  name: philranzato.kibana-install
+- src: git+git@github.com:PhilRanzato/philranzato.elasticsearch-certificate.git
   version: v1.0.0
-  name: plrr.elasticsearch-certificate
-- src: git+git@github.com:PhilRanzato/plrr.elk-utils.git
+  name: philranzato.elasticsearch-certificate
+- src: git+git@github.com:PhilRanzato/philranzato.elk-utils.git
   version: develop
-  name: plrr.elk-utils
-- src: git+git@github.com:PhilRanzato/plrr.elasticsearch-configuration.git
+  name: philranzato.elk-utils
+- src: git+git@github.com:PhilRanzato/philranzato.elasticsearch-configuration.git
   version: v1.0.0
-  name: plrr.elasticsearch-configuration
-- src: git+git@github.com:PhilRanzato/plrr.logstash-configuration.git
+  name: philranzato.elasticsearch-configuration
+- src: git+git@github.com:PhilRanzato/philranzato.logstash-configuration.git
   version: develop
-  name: plrr.logstash-configuration
-- src: git+git@github.com:PhilRanzato/plrr.java-certificates.git
+  name: philranzato.logstash-configuration
+- src: git+git@github.com:PhilRanzato/philranzato.java-certificates.git
   version: develop
-  name: plrr.java-certificates
-- src: git+git@github.com:PhilRanzato/plrr.kibana-configuration.git
+  name: philranzato.java-certificates
+- src: git+git@github.com:PhilRanzato/philranzato.kibana-configuration.git
   version: v1.0.0
-  name: plrr.kibana-configuration
+  name: philranzato.kibana-configuration
+- src: git+git@github.com:PhilRanzato/philranzato.nginx.git
+  version: develop
+  name: philranzato.nginx

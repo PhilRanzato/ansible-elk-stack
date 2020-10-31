@@ -1,0 +1,7 @@
+---
+- name: "Install and Configure Nginx"
+  hosts: kibana
+  roles:
+  - { role: philranzato.nginx }
+  vars_files:
+  - vars/08-nginx.yml

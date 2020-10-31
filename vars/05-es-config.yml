@@ -23,7 +23,7 @@ elasticsearch:
 
 ## /etc/elasticsearch/elasticsearch.yml
 cluster:
-  name: "plrr-elk"
+  name: "philranzato-elk"
 
 multiple_zones: true
 

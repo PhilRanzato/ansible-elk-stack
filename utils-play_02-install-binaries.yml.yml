@@ -3,16 +3,16 @@
   hosts: elasticsearch_master
   become: true
   roles:
-  - { role: plrr.elasticsearch-install }
+  - { role: philranzato.elasticsearch-install }
 
 - name: "Install Logstash"
   hosts: logstash
   become: true
   roles:
-  - { role: plrr.logstash-install }
+  - { role: philranzato.logstash-install }
 
 - name: "Install Kibana"
   hosts: kibana
   become: true
   roles:
-  - { role: plrr.kibana-install }
+  - { role: philranzato.kibana-install }

@@ -2,6 +2,6 @@
 - name: "Generate Elasticsearch Certificates and instances"
   hosts: elasticsearch_primary_master
   roles:
-  - { role: plrr.certificate-openssl }
+  - { role: philranzato.certificate-openssl }
   vars_files:
   - vars/ca.yml

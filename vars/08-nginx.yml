@@ -1,0 +1,18 @@
+---
+configuration: "HTTPS-reverse-proxy"
+
+upstream:
+  name: "kibana"
+  server: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+  port: "5601"
+
+ssl:
+  enabled: true
+  certificate: /etc/kibana/kibana.crt
+  key: /etc/kibana/kibana.key
+  key_password: "K1bana!"
+
+access_log: /var/log/nginx/nginx.access.log
+error_log: /var/log/nginx/nginx.error.log
+user: nginx
+pid: /run/nginx.pid

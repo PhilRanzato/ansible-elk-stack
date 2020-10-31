@@ -9,13 +9,13 @@
 - name: "Create Certificate for Kibana"
   hosts: kibana
   roles:
-  - { role: plrr.certificate-openssl }
+  - { role: philranzato.certificate-openssl }
   vars_files:
   - vars/07-kbn-certificate.yml
 
 - name: "Configure Kibana"
   hosts: kibana
   roles:
-  - { role: plrr.kibana-configuration }
+  - { role: philranzato.kibana-configuration }
   vars_files:
   - vars/07-kbn-config.yml

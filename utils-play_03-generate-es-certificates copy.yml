@@ -10,6 +10,6 @@
   hosts: elasticsearch_primary_master
   become: true
   roles:
-  - { role: plrr.elasticsearch-certificate }
+  - { role: philranzato.elasticsearch-certificate }
   vars_files:
   - vars/03-certificates-elasticsearch.yml

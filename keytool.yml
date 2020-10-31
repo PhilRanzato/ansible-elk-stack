@@ -2,6 +2,6 @@
 - name: "Testing java certificates"
   hosts: logstash
   roles:
-  - { role: plrr.java-certificates }
+  - { role: philranzato.java-certificates }
   vars_files:
   - vars/java.yml

@@ -9,6 +9,6 @@
 - name: "Configure Elasticsearch"
   hosts: elasticsearch_masters
   roles:
-  - { role: plrr.elasticsearch-configuration }
+  - { role: philranzato.elasticsearch-configuration }
   vars_files:
   - vars/05-es-config.yml
