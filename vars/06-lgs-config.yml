@@ -24,6 +24,8 @@ logstash_writer:
   index_patterns:
   - "logstash-*"
 
+include_example_pipeline: true
+
 logstash:
   conf_dir: "/etc/logstash"
   data_dir: "/var/lib/logstash"
