@@ -1,0 +1,14 @@
+---
+install: true
+configure: true
+
+logstash_hosts:
+- "logstash01"
+
+ssl:
+  enabled: true
+  ca.upload: false
+  ca.path: "/etc/kibana/elastic-CA.crt"
+  certificate.upload: false
+  certificate.cert: "/etc/kibana/filebeat-{{ inventory_hostname }}.crt"
+  certificate.key: "/etc/kibana/files/filebeat-{{ inventory_hostname }}.crt"

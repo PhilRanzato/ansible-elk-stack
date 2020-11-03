@@ -1,0 +1,7 @@
+---
+- name: "Install and Configure Filebeat"
+  hosts: kibana
+  roles:
+  - { role: philranzato.filebeat }
+  vars_files:
+  - vars/09-filebeat.yml
