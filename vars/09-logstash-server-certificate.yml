@@ -1,0 +1,54 @@
+---
+generate: 
+  ca: false
+  certificate: true
+
+certificate:
+  from_ca:
+    cert: /etc/logstash/elastic-CA.crt
+    key: /etc/logstash/elastic-CA.key
+    pass: "El4stic!"
+  directory: /etc/logstash
+  cert_name: "{{ inventory_hostname }}-filebeat"
+  # cert_format: "crt | pem"
+  cert_format: "crt"
+  key_passphrase: "F1lebeat!L0gstash"
+  key_format: "pkcs1"
+  key_mode: "0640"
+  key_ciphers: auto
+  validity: "+3650d"
+  size: "4096"
+  type: "RSA"
+  backup: yes
+  country: "ES"
+  organization: "elk"
+  email: "elastic.kibana@logstash.elk"
+  common_name: "{{ inventory_hostname }}"
+  # Values must be prefixed by their options. (i.e., email, URI, DNS, RID, IP, dirName, otherName and the ones specific to your CA)
+  sans: 
+  - "DNS:*.elk.es"
+  - "DNS:{{ inventory_hostname }}"
+  - "IP:10.101.0.20"
+  basic_constraints:
+  - "CA:FALSE"
+  key_usage:
+  - keyAgreement
+  - digitalSignature
+  extended_key_usage:
+  - serverAuth
+  owner: "root"
+  group: "logstash"
+
+utils: logstash-key-conversion
+logstash_server_certificates:
+  dir: "{{ certificate.directory }}"
+  cert:
+    file: "{{ certificate.cert_name }}"
+    extension: "crt"
+  key:
+    file: "{{ certificate.cert_name }}"
+    extension: "key"
+    pass: "{{ certificate.key_passphrase }}"
+    owner: "{{ certificate.owner }}"
+    group: "{{ certificate.group }}"
+    mode: "{{ certificate.key_mode }}"

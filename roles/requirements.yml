@@ -31,3 +31,6 @@
 - src: git+git@github.com:PhilRanzato/philranzato.nginx.git
   version: develop
   name: philranzato.nginx
+- src: git+git@github.com:PhilRanzato/philranzato.filebeat.git
+  version: feature-GH2-Configure
+  name: philranzato.filebeat

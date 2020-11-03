@@ -37,6 +37,9 @@ certificate:
   # cert_format: "crt | pem"
   cert_format: "crt"
   key_passphrase: "F1lebeat!"
+  key_format: "pkcs1"
+  key_mode: "0640"
+  key_ciphers: auto
   validity: "+3650d"
   size: "4096"
   type: "RSA"
@@ -44,11 +47,18 @@ certificate:
   country: "ES"
   organization: "elk"
   email: "elastic.kibana@logstash.elk"
-  common_name: "ElkStack"
+  common_name: "{{ inventory_hostname }}"
   # Values must be prefixed by their options. (i.e., email, URI, DNS, RID, IP, dirName, otherName and the ones specific to your CA)
   sans: 
   - "DNS:*.elk.es"
-  - "IP:35.228.156.50"
+  - "DNS:{{ hostvars[groups['logstash'][0]].ansible_default_ipv4.address }}"
   - "IP:10.101.0.30"
-  owner: "filebeat"
-  group: "filebeat"
+  basic_constraints:
+  - "CA:FALSE"
+  key_usage:
+  - keyAgreement
+  - digitalSignature
+  extended_key_usage:
+  - clientAuth
+  owner: "root"
+  group: "root"

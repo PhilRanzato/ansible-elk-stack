@@ -11,4 +11,5 @@ ssl:
   ca.path: "/etc/kibana/elastic-CA.crt"
   certificate.upload: false
   certificate.cert: "/etc/kibana/filebeat-{{ inventory_hostname }}.crt"
-  certificate.key: "/etc/kibana/files/filebeat-{{ inventory_hostname }}.crt"
+  certificate.key: "/etc/kibana/filebeat-{{ inventory_hostname }}.key"
+  certificate.key_passphrase: "F1lebeat!"

@@ -1,4 +1,32 @@
 ---
+- name: "Gather facts from all hosts"
+  hosts: all:!localhost
+  tasks:
+  - name: "Print IP"
+    debug:
+      msg: "{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}"
+
+- name: "Create Certificate for Filebeat client authentication"
+  hosts: kibana
+  roles:
+  - { role: philranzato.certificate-openssl }
+  vars_files:
+  - vars/09-filebeat-client-certificate.yml
+
+- name: "Create Certificate for Logstash server authentication"
+  hosts: logstash
+  roles:
+  - { role: philranzato.certificate-openssl }
+  vars_files:
+  - vars/09-logstash-server-certificate.yml
+
+- name: "Convert Logstash key into pkcs8 format"
+  hosts: logstash
+  roles:
+  - { role: philranzato.elk-utils }
+  vars_files:
+  - vars/09-logstash-server-certificate.yml
+
 - name: "Install and Configure Filebeat"
   hosts: kibana
   roles:
