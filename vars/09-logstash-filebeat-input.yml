@@ -1,0 +1,7 @@
+include_filebeat_pipeline: true
+filebeat:
+  ca_path: /etc/logstash/elastic-CA.crt
+  logstash_server: 
+    cert: /etc/logstash/logstash01-filebeat.crt
+    key:  /etc/logstash/logstash01-filebeat-pkcs8.key
+    key_pass: "F1lebeat!L0gstash"

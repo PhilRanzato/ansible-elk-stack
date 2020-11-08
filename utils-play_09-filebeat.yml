@@ -33,3 +33,10 @@
   - { role: philranzato.filebeat }
   vars_files:
   - vars/09-filebeat.yml
+
+- name: "Configure Logstash to accept filebeat input"
+  hosts: logstash
+  roles:
+  - { role: philranzato.logstash-configuration }
+  vars_files:
+  - vars/09-logstash-filebeat-input.yml
