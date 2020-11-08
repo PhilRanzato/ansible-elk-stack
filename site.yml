@@ -24,6 +24,21 @@
   roles:
   - { role: philranzato.kibana-install }
 
+- name: "Fetch CA"
+  hosts: elasticsearch_primary_master
+  roles:
+  - { role: philranzato.elk-utils }
+  vars_files:
+  - vars/03-fetch-ca.yml
+
+- name: "Copy CA to all hosts"
+  hosts: all:!localhost
+  roles:
+  - { role: philranzato.elk-utils }
+  vars_files:
+  - vars/03-copy-ca.yml
+  serial: 1
+
 - name: "Generate Elasticsearch Certificates"
   hosts: elasticsearch_primary_master
   become: true

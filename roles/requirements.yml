@@ -1,5 +1,5 @@
 - src: git+git@github.com:PhilRanzato/philranzato.certificate-openssl.git
-  version: v2.0.0
+  version: v2.0.1
   name: philranzato.certificate-openssl
 - src: git+git@github.com:PhilRanzato/philranzato.elasticsearch-install.git
   version: v1.0.0
@@ -14,23 +14,20 @@
   version: v1.0.0
   name: philranzato.elasticsearch-certificate
 - src: git+git@github.com:PhilRanzato/philranzato.elk-utils.git
-  version: develop
+  version: v1.1.0
   name: philranzato.elk-utils
 - src: git+git@github.com:PhilRanzato/philranzato.elasticsearch-configuration.git
-  version: v1.0.0
+  version: v1.0.1
   name: philranzato.elasticsearch-configuration
 - src: git+git@github.com:PhilRanzato/philranzato.logstash-configuration.git
-  version: develop
+  version: v1.2.0
   name: philranzato.logstash-configuration
-- src: git+git@github.com:PhilRanzato/philranzato.java-certificates.git
-  version: develop
-  name: philranzato.java-certificates
 - src: git+git@github.com:PhilRanzato/philranzato.kibana-configuration.git
   version: v1.0.0
   name: philranzato.kibana-configuration
 - src: git+git@github.com:PhilRanzato/philranzato.nginx.git
-  version: develop
+  version: v1.0.0
   name: philranzato.nginx
 - src: git+git@github.com:PhilRanzato/philranzato.filebeat.git
-  version: feature-GH2-Configure
+  version: v1.0.0
   name: philranzato.filebeat

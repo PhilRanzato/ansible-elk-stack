@@ -1,0 +1,21 @@
+---
+utils: "share-certificates"
+
+fetch:
+  enabled: true
+  ca: true
+  elasticsearch: false
+  logstash: false
+copy: 
+  enabled: false
+  ca: false
+  elasticsearch: false
+  logstash: false
+
+ca:
+  dir: /opt/private/ssl
+  cert:
+    file: "elastic-CA.crt"
+  key:
+    file: "elastic-CA.key"
+  dest: "/etc/{{ component }}"

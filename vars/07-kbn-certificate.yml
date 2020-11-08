@@ -37,6 +37,9 @@ certificate:
   # cert_format: "crt | pem"
   cert_format: "crt"
   key_passphrase: "K1bana!"
+  key_format: "pkcs1"
+  key_mode: "0640"
+  key_ciphers: auto
   validity: "+3650d"
   size: "4096"
   type: "RSA"
@@ -49,5 +52,12 @@ certificate:
   sans: 
   - "DNS:*.elk.es"
   - "IP:35.228.156.50"
+  basic_constraints:
+  - "CA:FALSE"
+  key_usage:
+  - keyAgreement
+  - digitalSignature
+  extended_key_usage:
+  - serverAuth
   owner: "kibana"
   group: "kibana"

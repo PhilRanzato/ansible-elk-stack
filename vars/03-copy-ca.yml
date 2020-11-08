@@ -1,0 +1,38 @@
+---
+utils: "share-certificates"
+
+fetch:
+  enabled: false
+  ca: false
+  elasticsearch: false
+  logstash: false
+copy: 
+  enabled: true
+  ca: true
+  elasticsearch: false
+  logstash: false
+
+ca:
+  dir: /opt/private/ssl
+  cert:
+    file: "elastic-CA.crt"
+  key:
+    file: "elastic-CA.key"
+  dest: "/etc/{{ component }}"
+
+elasticsearch:
+  src:
+    dir: "{{ ca.dir }}"
+    file: "elasticsearch-certificates.zip"
+  dest_dir: /etc/{{ component }}
+
+logstash:
+  src:
+    dir: "{{ ca.dir }}"
+    file: "logstash-certificates.zip"
+  dest_dir: /etc/{{ component }}
+
+node:
+  name: "{{ inventory_hostname }}"
+
+# component variable in group_vars/
