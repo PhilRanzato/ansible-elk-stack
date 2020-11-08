@@ -68,3 +68,59 @@
   - { role: philranzato.logstash-configuration }
   vars_files:
   - vars/06-lgs-config.yml
+
+- name: "Create Certificate for Kibana"
+  hosts: kibana
+  roles:
+  - { role: philranzato.certificate-openssl }
+  vars_files:
+  - vars/07-kbn-certificate.yml
+
+- name: "Configure Kibana"
+  hosts: kibana
+  roles:
+  - { role: philranzato.kibana-configuration }
+  vars_files:
+  - vars/07-kbn-config.yml
+
+- name: "Install and Configure Nginx"
+  hosts: kibana
+  roles:
+  - { role: philranzato.nginx }
+  vars_files:
+  - vars/08-nginx.yml
+
+- name: "Create Certificate for Filebeat client authentication"
+  hosts: kibana
+  roles:
+  - { role: philranzato.certificate-openssl }
+  vars_files:
+  - vars/09-filebeat-client-certificate.yml
+
+- name: "Create Certificate for Logstash server authentication"
+  hosts: logstash
+  roles:
+  - { role: philranzato.certificate-openssl }
+  vars_files:
+  - vars/09-logstash-server-certificate.yml
+
+- name: "Convert Logstash key into pkcs8 format"
+  hosts: logstash
+  roles:
+  - { role: philranzato.elk-utils }
+  vars_files:
+  - vars/09-logstash-server-certificate.yml
+
+- name: "Install and Configure Filebeat"
+  hosts: kibana
+  roles:
+  - { role: philranzato.filebeat }
+  vars_files:
+  - vars/09-filebeat.yml
+
+- name: "Configure Logstash to accept filebeat input"
+  hosts: logstash
+  roles:
+  - { role: philranzato.logstash-configuration }
+  vars_files:
+  - vars/09-logstash-filebeat-input.yml
